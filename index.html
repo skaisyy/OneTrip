@@ -2,6 +2,8 @@
 <html lang="id"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0A6EBD"><title>OneTrip — Explore More, Travel Better</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css"></head><body>
@@ -41,4 +43,22 @@
 <section class="screen" id="orders"><div class="eyebrow">SEMUA PERJALANANMU</div><h1>Pesanan</h1><p class="muted">Pantau perjalananmu dengan mudah.</p><div class="tabs"><button class="chosen" data-order="Aktif">Aktif</button><button data-order="Selesai">Selesai</button></div><div id="order-content"></div></section>
 
 <section class="screen" id="profile"><div class="profile-cover"></div><div class="profile"><div class="avatar">N</div><h2>Nama Pengguna</h2><p class="muted">user@email.com</p><span class="green-pill">✦ OneTrip Member</span></div><div class="profile-menu"><button>▤　Pesanan Saya <span>›</span></button><button>♡　Wishlist <span>›</span></button><button>⚙　Pengaturan <span>›</span></button><button>ⓘ　Bantuan <span>›</span></button></div><p class="slogan">Explore More, Travel Better. ✦</p></section>
-</div><nav class="bottom"><button class="active" data-go="home">⌂<small>Beranda</small></button><button data-go="packages">⌕<small>Explore</small></button><button data-go="orders">▤<small>Pesanan</small></button><button data-go="profile">◉<small>Profil</small></button></nav></main></div><div id="toast"></div><script src="script.js"></script></body></html>
+</div><nav class="bottom"><button class="active" data-go="home">⌂<small>Beranda</small></button><button data-go="packages">⌕<small>Explore</small></button><button data-go="orders">▤<small>Pesanan</small></button><button data-go="profile">◉<small>Profil</small></button></nav></main></div>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/sw.js")
+            .then(() => console.log("OneTrip PWA aktif!"))
+            .catch(error => console.error("PWA Error:", error));
+    });
+}
+</script>
+
+</body>
+</html>
+  
